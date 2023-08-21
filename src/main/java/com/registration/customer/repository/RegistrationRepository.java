@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RegistrationRepository extends MongoRepository<RegistrationEntity, Long> {
 
+    RegistrationEntity findByUserName(String userName);
 }

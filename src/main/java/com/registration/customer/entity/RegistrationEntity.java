@@ -23,6 +23,6 @@ public class RegistrationEntity {
     private Long zipcode;
     private String userName;
     private String password;
-
+    private boolean enabled=true;
 
 }
