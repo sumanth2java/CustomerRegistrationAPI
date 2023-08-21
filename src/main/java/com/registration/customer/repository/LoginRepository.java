@@ -4,5 +4,5 @@ import com.registration.customer.entity.LoginEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface LoginRepository extends MongoRepository<LoginEntity, Long> {
-    LoginEntity findByUsername(String username);
+    LoginEntity findByUserName(String userName);
 }

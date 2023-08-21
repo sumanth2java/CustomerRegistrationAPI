@@ -21,12 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    //    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        Object loginService = null;
-//        auth.userDetailsService(null);
-//    }
-//
     @Override
     @Bean // Expose AuthenticationManager as a bean
     public AuthenticationManager authenticationManagerBean() throws Exception {

@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +26,6 @@ public class RegistrationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    //    @Autowired
-//    private LoginEntity loginEntity;
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -36,13 +33,13 @@ public class RegistrationController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginEntity loginEntity) {
         try {
-            System.out.println("USer details: " + loginEntity.getUsername() + loginEntity.getPassword());
+            System.out.println("User details:: " + loginEntity.getUserName() +"password:: "+ loginEntity.getPassword());
 
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(loginEntity.getUsername(), loginEntity.getPassword()));
+                    new UsernamePasswordAuthenticationToken(loginEntity.getUserName(), loginEntity.getPassword()));
 
             System.out.println("Now the auth is done moving to fetching user details");
-            RegistrationEntity userDetails = registrationRepository.findByUserName(loginEntity.getUsername());
+            RegistrationEntity userDetails = registrationRepository.findByUserName(loginEntity.getUserName());
             return ResponseEntity.ok(userDetails);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Authentication failed");
@@ -61,11 +58,6 @@ public class RegistrationController {
     @GetMapping("/getCustomer")
     public List<RegistrationEntity> getCustomerDetails(){
         return registrationRepository.findAll();
-    }
-
-    @GetMapping("/hello")
-    public String hello(){
-        return "hello, this is tomcat";
     }
 
 }

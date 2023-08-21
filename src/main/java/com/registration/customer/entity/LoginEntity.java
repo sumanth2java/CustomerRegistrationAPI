@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @AllArgsConstructor
 public class LoginEntity {
-    private String username;
+    private String userName;
     private String password;
 
 }

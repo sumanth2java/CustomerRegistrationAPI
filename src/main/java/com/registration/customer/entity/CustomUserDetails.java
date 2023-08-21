@@ -9,11 +9,11 @@ import java.util.Collections;
 
 public class CustomUserDetails implements UserDetails {
 
-    private String username;
+    private String userName;
     private String password;
     private boolean enabled;
-    public CustomUserDetails(String username, String password, boolean enabled) {
-        this.username = username;
+    public CustomUserDetails(String userName, String password, boolean enabled) {
+        this.userName = userName;
         this.password = password;
         this.enabled = enabled;
     }
@@ -30,7 +30,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     @Override
