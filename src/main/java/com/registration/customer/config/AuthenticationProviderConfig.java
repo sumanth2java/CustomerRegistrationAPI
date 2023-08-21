@@ -1,10 +1,9 @@
 package com.registration.customer.config;
 
-import com.registration.customer.service.LoginServiceImpl;
+import com.registration.customer.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -12,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class AuthenticationProviderConfig {
 
     @Autowired
-    private LoginServiceImpl loginService;
+    private LoginService loginService;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
