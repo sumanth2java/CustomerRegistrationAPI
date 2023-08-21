@@ -1,0 +1,5 @@
+com/registration/customer/controller/RegistrationController.class
+com/registration/customer/entity/RegistrationEntity.class
+com/registration/customer/CustomerRegistrationApplication.class
+com/registration/customer/repository/RegistrationRepository.class
+com/registration/customer/service/RegistrationService.class
